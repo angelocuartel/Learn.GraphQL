@@ -1,7 +1,6 @@
 ﻿using Learn.GraphQL.Data.Entities;
 using Learn.GraphQL.Domain.Inputs;
 using Learn.GraphQL.Domain.Mutation;
-using Learn.GraphQL.ObjectTypes;
 
 namespace Learn.GraphQL
 {
@@ -23,18 +22,18 @@ namespace Learn.GraphQL
         }
 
         private User MapUserDtoToUser(UserDto userDto)
-        =>  new User
+        => new User
+        {
+            UserName = userDto.UserName,
+            Password = userDto.Password,
+            PersonalDetail = new PersonalDetail
             {
-                UserName = userDto.UserName,
-                Password = userDto.Password,
-                PersonalDetail = new PersonalDetail
-                {
-                    FirstName = userDto.PersonalDetail.FirstName,
-                    LastName = userDto.PersonalDetail.LastName,
-                    BirthDate = userDto.PersonalDetail.DateOfBirth
-                }
-            };
-        
+                FirstName = userDto.PersonalDetail.FirstName,
+                LastName = userDto.PersonalDetail.LastName,
+                BirthDate = userDto.PersonalDetail.DateOfBirth
+            }
+        };
+
 
     }
 }

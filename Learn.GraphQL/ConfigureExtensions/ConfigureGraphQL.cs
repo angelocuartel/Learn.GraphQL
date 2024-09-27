@@ -9,14 +9,9 @@ namespace Learn.GraphQL.ConfigureExtensions
         public static void AddAllObjectTypes(this IRequestExecutorBuilder requestExecutorBuilder)
         {
             var currentAssembly = Assembly.GetExecutingAssembly();
-            var objectTypeClassList = currentAssembly?.GetTypes()
+            var objectTypeClassList = currentAssembly.GetTypes()
                                     .Where(i => i.IsSubclassOf(typeof(ObjectType)) && i.IsClass)
                                     .ToList();
-
-            if (objectTypeClassList is null)
-            {
-                return;
-            }
 
             foreach (var objectType in objectTypeClassList)
             {
