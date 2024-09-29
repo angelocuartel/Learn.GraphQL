@@ -21,6 +21,8 @@ namespace Learn.GraphQL
             return await _userService.UpdateUserAsync(userId, mappedUser);
         }
 
+        public async Task<bool> DeleteUserAsync(long userId) => await _userService.DeleteUserAsync(userId);
+
         private User MapUserDtoToUser(UserDto userDto)
         => new User
         {
