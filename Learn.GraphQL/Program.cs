@@ -1,10 +1,7 @@
 using Learn.GraphQL;
-using Learn.GraphQL.ConfigureExtensions;
 using Learn.GraphQL.Data;
-using Learn.GraphQL.Data.Entities;
 using Learn.GraphQL.Domain.Mutation;
 using Learn.GraphQL.Domain.Queries.Service;
-using Learn.GraphQL.ObjectTypes;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
                 .AddMutationType<Mutation>()
                 .AddQueryType<Query>()
-                .AddAllObjectTypes();
+                .AddGraphQLTypes();
 
 builder.Services.AddScoped<CivilizationService>();
 builder.Services.AddScoped<Mutation>();
