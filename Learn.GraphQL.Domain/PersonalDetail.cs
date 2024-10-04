@@ -1,4 +1,4 @@
-﻿namespace Learn.GraphQL.Data.Entities;
+﻿namespace Learn.GraphQL.Domain;
 
 public class PersonalDetail
 {

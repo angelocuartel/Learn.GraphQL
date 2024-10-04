@@ -1,4 +1,4 @@
-﻿using Learn.GraphQL.Data.Entities;
+﻿using Learn.GraphQL.Domain;
 
 namespace Learn.GraphQL.ObjectTypes;
 

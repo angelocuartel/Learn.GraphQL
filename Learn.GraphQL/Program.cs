@@ -1,7 +1,5 @@
 using Learn.GraphQL;
-using Learn.GraphQL.Data;
-using Learn.GraphQL.Domain.Mutation;
-using Learn.GraphQL.Domain.Queries.Service;
+using Learn.GraphQL.Infrastructure.ConfigureExtensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 string connectionString = builder.Configuration.GetConnectionString("DbConnectionString");
 
-builder.Services.AddDbContext<DatabaseContext>(opt => opt.UseSqlite(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,10 +19,10 @@ builder.Services.AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddGraphQLTypes();
 
-builder.Services.AddScoped<CivilizationService>();
 builder.Services.AddScoped<Mutation>();
 builder.Services.AddScoped<Query>();
-builder.Services.AddScoped<UserService>();
+builder.Services.AddService();
+builder.Services.AddDatabaseContext(connectionString);
 
 var app = builder.Build();
 

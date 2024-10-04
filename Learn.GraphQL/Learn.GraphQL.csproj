@@ -24,8 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Learn.GraphQL.Data\Learn.GraphQL.Data.csproj" />
+    <ProjectReference Include="..\Learn.GraphQL.ApplicationService\Learn.GraphQL.ApplicationService.csproj" />
     <ProjectReference Include="..\Learn.GraphQL.Domain\Learn.GraphQL.Domain.csproj" />
+    <ProjectReference Include="..\Learn.GraphQL.Infrastructure\Learn.GraphQL.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

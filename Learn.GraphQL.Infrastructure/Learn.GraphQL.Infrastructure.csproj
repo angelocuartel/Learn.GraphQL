@@ -13,4 +13,9 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.33" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Learn.GraphQL.ApplicationService\Learn.GraphQL.ApplicationService.csproj" />
+	  <ProjectReference Include="..\Learn.GraphQL.Domain\Learn.GraphQL.Domain.csproj" />
+	</ItemGroup>
+
 </Project>

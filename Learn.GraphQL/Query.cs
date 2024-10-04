@@ -1,22 +1,13 @@
-﻿using Learn.GraphQL.Data.Entities;
-using Learn.GraphQL.Domain.Mutation;
-using Learn.GraphQL.Domain.Queries.Civilizations;
-using Learn.GraphQL.Domain.Queries.Service;
+﻿using Learn.GraphQL.ApplicationService.Interface;
+using Learn.GraphQL.Domain;
 
-namespace Learn.GraphQL
+namespace Learn.GraphQL;
+public class Query
 {
-    public class Query
-    {
-        private readonly CivilizationService _civilizationService;
-        private readonly UserService _userService;
-        public Query(CivilizationService civilizationService, UserService userService)
-        {
-            _civilizationService = civilizationService;
-            _userService = userService;
-        }
+    private readonly IUserRepository<User> _userRepository;
 
-        public IEnumerable<Civilization> GetCivilizations() => _civilizationService.GetCivilizations();
+    public Query(IUserRepository<User> userRepository) => _userRepository = userRepository;
+    
 
-        public async Task<List<User>> GetUsers() => await _userService.GetAllAsync();
-    }
+    public async Task<List<User>> GetUsersAsync() => await _userRepository.GetAllAsync();
 }

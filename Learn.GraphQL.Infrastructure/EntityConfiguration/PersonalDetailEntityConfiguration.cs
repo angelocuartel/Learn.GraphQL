@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Learn.GraphQL.Domain;
 using Microsoft.EntityFrameworkCore;
-using Learn.GraphQL.Data.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Learn.GraphQL.Data.EntityConfiguration;
+
+namespace Learn.GraphQL.Infrastructure.EntityConfiguration;
 
 public class PersonalDetailEntityConfiguration : IEntityTypeConfiguration<PersonalDetail>
 {

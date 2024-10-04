@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Learn.GraphQL.Data.Migrations
+namespace Learn.GraphQL.Infrastructure.Migrations
 {
     public partial class InitDb : Migration
     {

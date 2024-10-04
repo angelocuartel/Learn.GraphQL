@@ -1,8 +1,8 @@
-﻿using Learn.GraphQL.Data.Entities;
+﻿using Learn.GraphQL.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Learn.GraphQL.Data.EntityConfiguration;
+namespace Learn.GraphQL.Infrastructure.EntityConfiguration;
 
 public class UserEntityConfiguration : IEntityTypeConfiguration<User>
 {
