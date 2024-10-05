@@ -10,6 +10,7 @@ public class PersonalDetailType : ObjectType<PersonalDetail>
         Description = "Contains additional personal information of user.";
 
         descriptor.Field(i => i.PersonalDetailId).Ignore();
+        descriptor.Field(i => i.User).Ignore();
         descriptor.Field(i => i.FirstName).Type<StringType>().Description("First name of the user.");
         descriptor.Field(i => i.LastName).Type<StringType>().Description("Last name of the user.");
         descriptor.Field(i => i.BirthDate).Type<DateType>().Description("Date of birth of the user.");
