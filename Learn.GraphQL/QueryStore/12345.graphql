@@ -1,0 +1,11 @@
+﻿query
+{
+     users{
+        userName,
+        personalDetail{
+            firstName,
+            lastName,
+            birthDate
+        }
+    }
+}

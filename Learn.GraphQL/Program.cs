@@ -17,10 +17,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
                 .AddMutationType<Mutation>()
                 .AddQueryType<Query>()
-                .AddGraphQLTypes();
+                .AddGraphQLTypes()
+                .UsePersistedQueryPipeline()
+                .AddReadOnlyFileSystemQueryStorage("./QueryStore");
 
 builder.Services.AddScoped<Mutation>();
 builder.Services.AddScoped<Query>();
+
 builder.Services.AddService();
 builder.Services.AddDatabaseContext(connectionString);
 
